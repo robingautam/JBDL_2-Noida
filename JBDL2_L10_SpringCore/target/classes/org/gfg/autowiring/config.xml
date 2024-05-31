@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd">
+
+   <!-- <bean class="org.gfg.autowiring.Student" id="student" autowire="constructor">
+        <property name="name" value="Robin" />
+    </bean>
+
+    <bean class="org.gfg.autowiring.Address" id="address4">
+        <property name="address" value="Some Address" />
+    </bean>-->
+
+   <bean class="org.gfg.autowiring.Student" id="student">
+      <property name="name" value="Robin" />
+   </bean>
+
+  <!-- <bean class="org.gfg.autowiring.Address" id="address4">
+      <property name="address" value="Some 4 Address" />
+   </bean>
+
+   <bean class="org.gfg.autowiring.Address" id="address5">
+      <property name="address" value="Some 5 Address" />
+   </bean>-->
+
+   <context:annotation-config />
+
+
+
+
+
+
+
+
+</beans>

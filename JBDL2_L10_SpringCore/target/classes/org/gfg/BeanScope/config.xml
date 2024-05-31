@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list list-class="java.util.ArrayList" id="list">
+        <value>mango</value>
+        <value>Banana</value>
+    </util:list>
+
+    <util:set set-class="java.util.HashSet" id="set">
+        <value>Hindi</value>
+        <value>Hindi</value>
+        <value>English</value>
+    </util:set>
+
+    <util:map map-class="java.util.HashMap" id="map">
+        <entry key="English" value="30" />
+        <entry key="Hindi" value="40" />
+    </util:map>
+
+
+    <bean class="org.gfg.BeanScope.Student" id="student">
+        <property name="id" value="1" />
+        <property name="name" value="rob" />
+        <property name="list">
+            <ref bean="list" />
+        </property>
+        <property name="subjects">
+            <ref bean="set" />
+        </property>
+        <property name="marks">
+            <ref bean="map" />
+        </property>
+    </bean>
+
+
+</beans>
