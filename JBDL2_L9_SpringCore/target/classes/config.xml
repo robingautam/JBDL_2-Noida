@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- This is the code for setter or property Injection  -->
+   <!-- <bean class="org.gfg.Student" id="st">
+        <property name="id" value="1" />
+        <property name="name"  value="Robin" />
+        <property name="email" value="robin@gmail.com"/>
+    </bean>-->
+
+  <!--  <bean class="org.gfg.spring.ci.Employee" name="employee" >
+        <constructor-arg value="Robin" />
+        <constructor-arg value="robin@gmail.com" />
+    </bean>-->
+
+   <!-- <bean class="org.gfg.spring.ci.Employee" name="employee" >
+        <constructor-arg value="23" type="int" index="1"/>
+        <constructor-arg value="12" type="int" index="0"/>
+    </bean>-->
+
+    <bean class="org.gfg.Student" id="st">
+        <property name="id" value="1" />
+        <property name="name"  value="Robin" />
+        <property name="email" value="robin@gmail.com"/>
+        <property name="list">
+            <list>
+                <value>Something</value>
+                <value>Mango</value>
+                <value>Apple</value>
+            </list>
+        </property>
+        <property name="subject" >
+            <set>
+                <value>Hindi</value>
+                <value>Hindi</value>
+                <value>English</value>
+                <value>Maths</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="Hindi" value="89" />
+                <entry key="English" value="89" />
+            </map>
+        </property>
+
+        <property name="address">
+            <ref bean="address" />
+        </property>
+
+    </bean>
+
+    <bean class="org.gfg.Address" name="address" p:line1="M.V phase 1" p:line2="Delhi" p:pincode="110091">
+       <!-- <property name="line1" value="M.V phase 1" />
+        <property name="line2" value="Delhi" />
+        <property name="pincode" value="110091" />-->
+    </bean>
+
+    <bean class="org.gfg.Parent" name="pclass">
+        <property name="parentField" value="23" />
+        <property name="fruits">
+            <list>
+                <value>Mango</value>
+                <value>Banana</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.gfg.Child" name="cClass cClass2 cClass3" parent="pclass">
+        <property name="childField" value="This is child field" />
+        <property name="fruits">
+            <list merge="true">
+                <value>Apple</value>
+            </list>
+        </property>
+    </bean>
+
+    <alias name="cClass" alias="sop" />
+
+
+
+</beans>
